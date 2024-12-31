@@ -7,6 +7,5 @@ This is a simple task management application built with React and Vite. The appl
 - Add new tasks with a title and content
 - Update existing tasks
 - Delete tasks
-- Responsive design
 
-![image](https://github.com/user-attachments/assets/fad47ce2-8332-42b1-92e1-75ca5d195aa1)
+![image](https://github.com/user-attachments/assets/0185739e-e253-4b40-89bd-ab9173775bd7)
