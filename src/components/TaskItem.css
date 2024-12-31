@@ -1,0 +1,30 @@
+.task {
+  border: 1px solid green;
+  width: 450px;
+  padding: 10px 30px;
+  border-radius: 10px;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btnSil,
+.btnGuncelle {
+  color: white;
+  border-radius: 10px;
+  padding: 10px 30px;
+  font-size: large;
+  cursor: pointer;
+}
+
+.btnSil {
+  background-color: red;
+  border: 1px solid red;
+}
+
+.btnGuncelle {
+  background-color: blue;
+  border: 1px solid blue;
+}
