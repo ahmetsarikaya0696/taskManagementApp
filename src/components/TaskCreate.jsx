@@ -9,7 +9,7 @@ function TaskCreate({ addTask }) {
     event.preventDefault();
     setTitle("");
     setContent("");
-    addTask({ id: Math.random(), title, content });
+    addTask({ title, content });
   };
 
   const handleContentChange = (event) => {

@@ -1,23 +1,38 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import TaskCreate from "./components/TaskCreate";
 import TaskList from "./components/TaskList";
+import axios from "axios";
 
 function App() {
+  useEffect(() => {
+    axios.get("http://localhost:3000/tasks").then((response) => {
+      setTasks(response.data);
+    });
+  }, []);
+
   const [tasks, setTasks] = useState([]);
   const addTask = (task) => {
-    setTasks((prevState) => [...prevState, task]);
+    axios.post("http://localhost:3000/tasks", task).then((response) => {
+      setTasks((prevState) => [...prevState, response.data]);
+    });
   };
 
   const handleDelete = (id) => {
-    setTasks((prevState) => prevState.filter((task) => task.id !== id));
+    axios.delete(`http://localhost:3000/tasks/${id}`).then(() => {
+      setTasks((prevState) => prevState.filter((task) => task.id !== id));
+    });
   };
   const handleUpdate = (updatedTask) => {
-    setTasks((prevState) =>
-      prevState.map((task) =>
-        task.id === updatedTask.id ? { ...task, ...updatedTask } : task
-      )
-    );
+    axios
+      .put(`http://localhost:3000/tasks/${updatedTask.id}`, updatedTask)
+      .then(() => {
+        setTasks((prevState) =>
+          prevState.map((task) =>
+            task.id === updatedTask.id ? { ...task, ...updatedTask } : task
+          )
+        );
+      });
   };
 
   return (
