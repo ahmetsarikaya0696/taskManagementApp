@@ -1,8 +1,13 @@
 import { useState } from "react";
 import "./TaskItem.css";
 import TaskUpdate from "./TaskUpdate";
+import TaskContext from "../contexts/task-context";
+import { useContext } from "react";
 
-function TaskItem({ task, onDelete, onUpdate }) {
+function TaskItem({ task }) {
+  const { handleDelete: onDelete, handleUpdate: onUpdate } =
+    useContext(TaskContext);
+
   const [isUpdate, setIsUpdate] = useState(false);
   const handleClick = () => {
     onDelete(task.id);

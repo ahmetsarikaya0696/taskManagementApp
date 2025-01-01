@@ -1,7 +1,11 @@
 import { useState } from "react";
 import "./TaskCreate.css";
+import { useContext } from "react";
+import TaskContext from "../contexts/task-context";
 
-function TaskCreate({ addTask }) {
+function TaskCreate() {
+  const { addTask } = useContext(TaskContext);
+
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
