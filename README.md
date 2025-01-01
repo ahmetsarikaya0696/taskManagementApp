@@ -13,6 +13,11 @@ This application makes use of the following React hooks:
 
 - useState: Used to manage the state of tasks.
 - useEffect: Used to fetch tasks from the server when the component mounts.
+- useContext: Used to prevent prop-drilling by managing shared state across components.
 
+# Usefull Links
+- https://www.npmjs.com/package/json-server
+- https://axios-http.com/docs/intro
 
+# Project SS
 ![image](https://github.com/user-attachments/assets/0185739e-e253-4b40-89bd-ab9173775bd7)
